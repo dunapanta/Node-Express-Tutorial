@@ -25,3 +25,17 @@ const getText = (path) => {
 getText("./1-node/11-async-patterns/text.txt")
   .then((result) => console.log(result))
   .catch((err) => console.log(err));
+
+// Async await
+
+const start = async () => {
+  try {
+    const first = await getText("./1-node/11-async-patterns/text.txt");
+    const second = await getText("./1-node/11-async-patterns/secondText.txt");
+    console.log("async", first, second);
+  } catch (err) {
+    console.log(err);
+  }
+};
+
+start();
